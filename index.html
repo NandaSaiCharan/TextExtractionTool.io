@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Text Extraction Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://unpkg.com/tesseract.js@4.1.1/dist/tesseract.min.js'></script>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Student Text Extraction Tool</h1>
+        
+        <div class="upload-section">
+            <div class="input-group">
+                <h2>📷 Upload Your Image</h2>
+                <input type="file" id="imageInput" accept="image/*">
+                <div id="imagePreview" class="preview"></div>
+                <button onclick="extractImageText()">🔍 Extract Text from Image</button>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h2>📝 Extracted Text</h2>
+            <textarea id="resultText" placeholder="Your extracted text will appear here..."></textarea>
+            <div class="button-group">
+                <button onclick="saveEditedText()">💾 Save Changes</button>
+                <button onclick="copyText()">📋 Copy Text</button>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <div class="history-header">
+                <h2>📚 Extraction History</h2>
+                <button onclick="clearHistory()" class="clear-history">🗑️ Clear All History</button>
+            </div>
+            <div id="extractionHistory"></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
